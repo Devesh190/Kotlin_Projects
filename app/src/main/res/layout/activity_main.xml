@@ -12,13 +12,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello world"
-        android:id="@+id/tv"/>
+        android:text="Click button to roll dice"
+        android:id="@+id/tv_text"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/empty_dice"
+        android:id="@+id/iv_dice"/>
 
     <com.google.android.material.button.MaterialButton
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Roll"
+        app:backgroundTint="#4169E1"
+        app:cornerRadius="10dp"
+        android:elevation="4dp"
         android:id="@+id/mb_roll"
         />
 
