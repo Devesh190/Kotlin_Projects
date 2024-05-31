@@ -8,42 +8,22 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.kotlin.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
-     lateinit var binding: ActivityMainBinding
+class MainActivity : AppCompatActivity(){
+    private lateinit var tv:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
+        val btn = findViewById<Button>(R.id.mb_roll)
+        tv = findViewById(R.id.tv)
 
-        binding.btnAdd.setOnClickListener(this)
-        binding.btnSubtraction.setOnClickListener(this)
-        binding.btnMultiplication.setOnClickListener(this)
-        binding.btnDividion.setOnClickListener(this)
+        btn.setOnClickListener{ rollDice()}
 
     }
 
-    override fun onClick(v: View?) {
-        var a = binding.edA.text.toString().toDouble()
-        var b = binding.edB.text.toString().toDouble()
-        var result:Double = 0.0
-
-        when(v?.id){
-            R.id.btn_add -> {
-                result = a+b
-            }
-            R.id.btn_subtraction -> {
-                result = a-b
-            }
-            R.id.btn_multiplication -> {
-                result = a*b
-            }
-            R.id.btn_dividion -> {
-                result = a/b
-            }
-        }
-
-        binding.tvResult.text = "Result is $result"
+    private fun rollDice() {
+        var randomNum = (1..6).random()
+        tv.text = randomNum.toString()
     }
 }
