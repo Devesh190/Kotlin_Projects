@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,29 +9,71 @@
     android:orientation="vertical"
     tools:context=".fragments.QuizFragment">
 
-    <com.google.android.material.button.MaterialButton
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/android_category_simple"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="How are you??"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:id="@+id/rd_first_option"
+            android:text="Option one"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:id="@+id/rd_second_option"
+            android:text="Option two"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:id="@+id/rd_third_option"
+            android:text="Option three"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:id="@+id/rd_fourth_option"
+            android:text="Option four"/>
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textColor="#319E47"
-        android:text="Win"
+        android:text="Submit"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:strokeColor="#319E47"
         app:backgroundTint="#E8F5E9"
         app:cornerRadius="10dp"
         android:elevation="4dp"
-        android:id="@+id/mb_win"/>
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#319E47"
-        android:text="Over"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        app:strokeColor="#319E47"
-        app:backgroundTint="#E8F5E9"
-        app:cornerRadius="10dp"
-        android:elevation="4dp"
-        android:id="@+id/mb_over"/>
+        android:id="@+id/mb_submit"
 
-
+    </LinearLayout>
+</ScrollView>
 </LinearLayout>
 </layout>
