@@ -71,7 +71,7 @@
         app:backgroundTint="#E8F5E9"
         app:cornerRadius="10dp"
         android:elevation="4dp"
-        android:id="@+id/mb_submit"
+        android:id="@+id/mb_submit"/>
 
     </LinearLayout>
 </ScrollView>
