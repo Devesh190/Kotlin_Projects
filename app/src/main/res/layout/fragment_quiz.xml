@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    <data>
+        <variable
+            name="questions"
+            type="com.example.kotlin.fragments.QuizFragment" />
+    </data>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -25,7 +29,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How are you??"
+        android:text="@{questions.currentQuestion.text}"
         android:textSize="22sp"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -33,32 +37,34 @@
 
     <RadioGroup
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/rg_question"
+        >
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:id="@+id/rd_first_option"
-            android:text="Option one"/>
+            android:text="@{questions.answers[0]}"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:id="@+id/rd_second_option"
-            android:text="Option two"/>
+            android:text="@{questions.answers[1]}"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:id="@+id/rd_third_option"
-            android:text="Option three"/>
+            android:text="@{questions.answers[2]}"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:id="@+id/rd_fourth_option"
-            android:text="Option four"/>
+            android:text="@{questions.answers[3]}"/>
     </RadioGroup>
 
     <com.google.android.material.button.MaterialButton
